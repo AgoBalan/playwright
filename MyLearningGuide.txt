@@ -1,0 +1,20 @@
+*** Install node.js and configure the env variable*****************
+1. GO to Terminal and craete a new node project npm init playwright 
+ It creats the playwright project Skeleton and install all needed dependencies!!
+
+ 2.In left side files will b ecreated, among 
+ playwright.config.js is important -> It is the test runner for the project.
+ package.json is like POM, dependencies file
+
+ 3. Under test folder sample playwright test case will be created
+ 4. node_modules has all the jars ad dependencies
+ 5. create new test case UIBasic.spec.js .. here all test case refeered as spec
+
+ //Config file details
+
+// to run  npx playwright test
+   npx -> takes to the node_module, in that we say look for playwright package and run funtion test 
+    npx playwright test --> headless mode
+    npx playwright test -- headed      -> head mode
+
+
