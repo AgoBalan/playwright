@@ -38,9 +38,10 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
     browserName: 'chromium', // can be changed to firefox or webkit 
     headless: false,  // true means no browser UI, false means with browser UI
+    screenshot: 'on', 
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on',
   },
 
   /* Configure projects for major browsers */

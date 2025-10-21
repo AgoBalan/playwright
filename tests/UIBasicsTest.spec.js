@@ -171,3 +171,13 @@ test.only('New tab handling & textcontent() vs inputValue()', async function({br
     console.log("--------------------")
      console.log(await username.inputValue());
 });
+test('PlayWright Inspector', async function({browser}) {
+   /// RUn any test with --debug
+   //npx playwright test --debug  
+      console.log("Hello World");
+});
+test('PlayWright record and playback', async function({browser}) {
+   /// To record and playback the script
+   //npx playwright codegen http://www.google.com  
+   console.log("Hello World");
+});
