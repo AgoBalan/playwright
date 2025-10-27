@@ -2,7 +2,9 @@
   "name": "myproject",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test tests/NetworkIntercept.spec.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
