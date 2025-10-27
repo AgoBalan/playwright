@@ -39,7 +39,7 @@ test.only('Skip login by token from Before Class', async function({page}) {
     //comment ogin and use the token from Befreo hook to pass the auth cookie into broweser lcoal storage
  // playwright can execute any java script by using
       await page.addInitScript(value => {window.localStorage.setItem('token', value);}, token);
-      await page.addInitScript(value => {window.sessionStorage.setItem('token', value);}, token);
+   //   await page.addInitScript(value => {window.sessionStorage.setItem('token', value);}, token);
 
       await page.goto('https://rahulshettyacademy.com/client/');
 
