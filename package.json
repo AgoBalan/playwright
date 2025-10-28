@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test tests/NetworkIntercept.spec.js"
+    "test": "npx playwright test tests/ExcelDownloadUpload.spec.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,6 @@
   "devDependencies": {
     "@playwright/test": "^1.56.0",
     "@types/node": "^24.7.2"
-  }
+  },
+  "dependencies": {"exceljs": "^4.4.0"}
 }
