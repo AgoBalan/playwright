@@ -87,7 +87,8 @@ export default defineConfig({
 
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on', // retain-on-failure
-        ...devices['iPhone 15 Pro Max landscape']
+        ...devices['iPhone 15 Pro Max landscape'],
+        permissions: ["geolocation"],
        }
     },
   ]
