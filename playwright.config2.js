@@ -89,6 +89,7 @@ export default defineConfig({
         trace: 'on', // retain-on-failure
         ...devices['iPhone 15 Pro Max landscape'],
         permissions: ["geolocation"],
+        video: 'retain-on-failure'
        }
     },
   ]
