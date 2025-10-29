@@ -18,3 +18,19 @@
     npx playwright test -- headed      -> head mode
 
 
+
+TO install allure report:
+Update config to use line and allure and then follow below steps.
+1. npm i -D @playwright/test allure-playwright
+   allure-playwright is just the plugin that generates the allure-results folder.
+
+2.Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+iwr -useb get.scoop.sh | iex
+scoop install allure
+note: The allure command you're trying to run (allure generate) comes from the Allure CLI, which must be installed globally and added to your system's PATH.
+
+3. allure --version
+4. Generate report from the new folder and clean up any old reports
+    allure generate ./allure-results --clean
+5. Open report
+     allure open  ./allure-reports
