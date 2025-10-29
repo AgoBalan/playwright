@@ -14,7 +14,10 @@ test.beforeAll( async( {browser} )=> {
     newContext = await browser.newContext({storageState: 'state.json'}); // using the stored state to new context
 });
 
-test.only('Here no page is passed as parameter', async function() {
+
+test.describe.configure({mode:'parallel'})
+//test.describe.configure({mode:'serial'})
+test('Here no page is passed as parameter', async function() {
    const  page = await newContext.newPage();
      await page.goto('https://rahulshettyacademy.com/client/');
     await page.locator("button[routerlink*='myorders']").click();
@@ -23,16 +26,16 @@ test.only('Here no page is passed as parameter', async function() {
     //************************************************************************************* */
 });
 
-// test('TC2 -Here no page is passed as parameter', async function() {
-//    const  page = await newContext.newPage();
-//      await page.goto('https://rahulshettyacademy.com/client/');
-//     await page.locator("button[routerlink*='myorders']").click();
-//     await page.locator("tbody").waitFor();
-//     const rows = await page.locator("tbody tr");
-//     //************************************************************************************* */
-// });
+test('TC2 -Here no page is passed as parameter', async function() {
+   const  page = await newContext.newPage();
+     await page.goto('https://rahulshettyacademy.com/client/');
+    await page.locator("button[routerlink*='myorders']").click();
+    await page.locator("tbody").waitFor();
+    const rows = await page.locator("tbody tr");
+    //************************************************************************************* */
+});
 
-test.only('TC3 -Here no page is passed as parameter', async function() {
+test('TC3 -Here no page is passed as parameter', async function() {
     //To debug API an UI
     // GOto package.json, Inside script create test property
       });
