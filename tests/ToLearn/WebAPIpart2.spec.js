@@ -35,7 +35,7 @@ test('TC2 -Here no page is passed as parameter', async function() {
     //************************************************************************************* */
 });
 
-test('TC3 -Here no page is passed as parameter', async function() {
+test.skip('TC3 -Here no page is passed as parameter', async function() {
     //To debug API an UI
     // GOto package.json, Inside script create test property
       });
