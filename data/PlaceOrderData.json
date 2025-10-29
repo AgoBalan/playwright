@@ -1,3 +1,4 @@
+[
 {
     "url": "https://rahulshettyacademy.com/client/",
     "name": "Agoben",
@@ -9,4 +10,17 @@
     "productName": "ZARA COAT 3",
     "email": "jehovabalan@gmail.com",
     "password": "12345678Q.A!f"
+},
+{
+    "url": "https://rahulshettyacademy.com/client/",
+    "name": "TestUser",
+    "country": "USA",
+    "city": "New York",
+    "creditCard": "4321 8765 6789 2345",
+    "month": "11",
+    "year": "2024",
+    "productName": "ADIDAS ORIGINAL",
+     "email": "jehovabalan@gmail.com",
+    "password": "12345678Q.A!f"
 }
+]

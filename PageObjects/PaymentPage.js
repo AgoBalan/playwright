@@ -5,7 +5,7 @@ class PaymentPage {
         this.submitButton = page.locator(".action__submit");
     }       
     async selectCountry(countryName) {
-        await this.countryInput.pressSequentially(countryName, { delay: 150 });
+        await this.countryInput.pressSequentially(countryName, { delay: 200 });
         const dropdown = this.page.locator('.ta-results');
         await dropdown.waitFor();
         const optionsCount = await dropdown.locator('button').count();      
@@ -18,6 +18,8 @@ class PaymentPage {
         }
     }
     async submitOrder() {
+        await this.page.waitForTimeout(2000);
+        await this.submitButton.waitFor();
         await this.submitButton.click();
         await this.page.waitForLoadState('networkidle');
     }

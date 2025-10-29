@@ -7,18 +7,20 @@ const {ConfirmationPage} = require('../PageObjects/ConfirmationPage');
 const {OrderHistoryPage} = require('../PageObjects/OrderHistoryPage');
 const {PageObjectManager} = require('../PageObjectManager/PageObjectManager');
 //COnvert json to string using stringyfy and then parse it back to object, to avoid reference issues
-const dataset = JSON.parse(JSON.stringify(require('../data/PlaceOrderData')));  
+const dataSet = JSON.parse(JSON.stringify(require('../data/PlaceOrderData')));  
 
-test.only('POM Based test case', async function({page}) {
-   let orderId;
-   //Creating the object of PageObjectManager
-   const pageObjectManager = new PageObjectManager(page);
+//dataset is an array, run this test case for each array index,Data Driven Testing!!!
+for (const dataset of dataSet) {
+  test.only(`POM Based test case for ${dataset.productName} `, async function({page}) {
+    let orderId;
+    //Creating the object of PageObjectManager
+    const pageObjectManager = new PageObjectManager(page);
 
-   
-   //**********Using POM model for login****************** */
-   const loginPage = pageObjectManager.getLoginPage();
-   await loginPage.goto(dataset.url);
-   await loginPage.validLogin(dataset.email,dataset.password);
+    
+    //**********Using POM model for login****************** */
+    const loginPage = pageObjectManager.getLoginPage();
+    await loginPage.goto(dataset.url);
+    await loginPage.validLogin(dataset.email,dataset.password);
     //************************************************************************************* */
     //validation
     const dashBoardPage = pageObjectManager.getDashBoardPage();
@@ -41,6 +43,7 @@ test.only('POM Based test case', async function({page}) {
     const orderHistoryPage = pageObjectManager.getOrderHistoryPage();
     await orderHistoryPage.findOrderAndViewDetails(orderId);
 
-});
+    });
+}
 
 
