@@ -60,7 +60,35 @@ export default defineConfig({
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on', // retain-on-failure
        }
-    }
+    },
+     {
+      name: 'MobileView',
+       use: {
+        /* Base URL to use in actions like `await page.goto('')`. */
+        // baseURL: 'http://localhost:3000',
+        browserName: 'chromium', // can be changed to firefox or webkit 
+        headless: false,  // true means no browser UI, false means with browser UI
+        screenshot: 'on', 
+
+        /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+        trace: 'on', // retain-on-failure
+        viewport: {width:720,height:720}
+       }
+    },
+    {
+      name: 'iphone15',
+       use: {
+        /* Base URL to use in actions like `await page.goto('')`. */
+        // baseURL: 'http://localhost:3000',
+        browserName: 'webkit', // can be changed to firefox or webkit 
+        headless: false,  // true means no browser UI, false means with browser UI
+        screenshot: 'on', 
+
+        /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+        trace: 'on', // retain-on-failure
+        ...devices['iPhone 15 Pro Max landscape']
+       }
+    },
   ]
 
   /* Configure projects for major browsers */
