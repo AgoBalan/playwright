@@ -1,7 +1,7 @@
 const {test,expect,request} = require('@playwright/test');
 
 
-test.only('excel download and upload', async function({page}) {
+test.only('@excel excel download and upload', async function({page}) {
 
    await page.goto('https://rahulshettyacademy.com/upload-download-test/');
 
