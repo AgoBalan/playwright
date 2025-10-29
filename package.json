@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test tests/POMTestcase.spec.js"
+    "test": "npx playwright test tests/POMTestcaseWithCustomizedTest.spec.js"
   },
   "keywords": [],
   "author": "",

@@ -1,7 +1,7 @@
 const {test,expect,request} = require('@playwright/test');
 
 //We have provison to customize the test object of playwright
-const {customTest} = require('../utils/test-base');
+const {customtest} = require('../utils/test-base');
 const {LoginPage} = require('../PageObjects/LoginPage');
 const {DashBoardPage} = require('../PageObjects/DashBoardPage');
 const {CartPage} = require('../PageObjects/CartPage');
@@ -9,12 +9,12 @@ const {PaymentPage} = require('../PageObjects/PaymentPage');
 const {ConfirmationPage} = require('../PageObjects/ConfirmationPage');
 const {OrderHistoryPage} = require('../PageObjects/OrderHistoryPage');
 const {PageObjectManager} = require('../PageObjectManager/PageObjectManager');
-//COnvert json to string using stringyfy and then parse it back to object, to avoid reference issues
+//COnvert json to string using stringyfy and then parse   it back to object, to avoid reference issues
 const dataSet = JSON.parse(JSON.stringify(require('../data/PlaceOrderData')));  
 
-//dataset is an array, run this test case for each array index,Data Driven Testing!!!
-for (const dataset of dataSet) {
-  test.only(`POM Based test case for ${dataset.productName} `, async function({page}) {
+
+//Anotehr way of passing date using customized test object from test-base.js as a fixture
+  customtest('Customized Test testcase', async function({page,dataset}) {
     let orderId;
     //Creating the object of PageObjectManager
     const pageObjectManager = new PageObjectManager(page);
@@ -47,6 +47,5 @@ for (const dataset of dataSet) {
     await orderHistoryPage.findOrderAndViewDetails(orderId);
 
     });
-}
 
 
