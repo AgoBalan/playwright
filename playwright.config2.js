@@ -83,6 +83,7 @@ export default defineConfig({
         browserName: 'webkit', // can be changed to firefox or webkit 
         headless: false,  // true means no browser UI, false means with browser UI
         screenshot: 'on', 
+        ignoreHTTPSErrors: true,
 
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on', // retain-on-failure

@@ -48,4 +48,10 @@ const dataSet = JSON.parse(JSON.stringify(require('../data/PlaceOrderData')));
 
     });
 
+  test.only('To handle SSL certifcate error', async function({page}) {
+  await page.goto('https://untrusted-root.badssl.com/');
+  //iphone config has sslcertifcate true
+  await page.pause();
+  });
+
 
