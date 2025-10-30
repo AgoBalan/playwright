@@ -16,6 +16,8 @@ yarn-error.log*
 test-results/
 playwright-report/
 *.zip
+allure-report/
+allure-results/
 
 # VS Code settings
 .vscode/
