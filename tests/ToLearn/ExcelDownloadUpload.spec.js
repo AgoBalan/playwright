@@ -14,5 +14,5 @@ test.only('@excel excel download and upload', async function({page}) {
     const filePath = './data/download.xlsx';
     //setinputfile will work only if element has type='file'in the html attribute
     await page.locator('#fileinput').setInputFiles(filePath);
-    await page.waitForTimeout(5000);
+  //  await page.waitForTimeout(5000);
 });

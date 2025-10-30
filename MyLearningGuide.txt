@@ -34,3 +34,41 @@ note: The allure command you're trying to run (allure generate) comes from the A
     allure generate ./allure-results --clean
 5. Open report
      allure open  ./allure-reports
+
+
+To run in jenkins ,ocalhost 7777 admin:admin
+1. new item
+2. SInce porject in lcoal, select advanced-> use custome worspace, give tha path
+3. Provide Buidl steps
+  if select execute shell  -> for MAC
+      give  -> npx playwright install   (Since jenkisn run insystemprofile,everytime download needed)
+               npm run test
+  else windows bacth
+      give -> npx playwright install
+              npm run test
+4,Build now      
+
+5. or even you can paramteris it
+   Click this project is parametrized and name as "script" provide values , show as dorpdown
+
+   if select execute shell  -> for MAC
+      give  -> npx playwright install   (Since jenkisn run insystemprofile,everytime download needed)
+               npm run "$script"
+    else windows bacth
+      give -> echo Jenkins injected script: %script%
+
+              echo Installing Playwright browsers...
+              call npx playwright install || exit /b 1
+
+              echo Running tests with script: %script%
+              call npm run %script% || exit /b 1
+
+6.Go to Configure > Post-build Actions > Archive the artifacts
+
+                Add:
+                playwright-report/**
+
+
+
+
+
