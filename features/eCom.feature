@@ -5,3 +5,9 @@ Feature: Ecommerce validations
       When User add item "ZARA COAT 3" to the cart
     #  Then User goes to the cart page and validate the item "ZARA COAT 3"
   
+  @smoke
+  Scenario Outline: Scenario Outline name
+      Given User logs into the ecommerce application <userName> and <pwd>
+      Examples:
+          | userName               | pwd            |
+          | jehovabalan@gmail.com  | 12345678Q.A!f  |
