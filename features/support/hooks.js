@@ -11,6 +11,11 @@ Before( async function () {
     this.pageObjectManager = new PageObjectManager(this.page);
 });
 
+Before({tags: "@foo"}, function () {
+  // This hook will be executed before scenarios tagged with @foo
+  //hooks also csitmizable with tags!!!
+});
+
 After(async function () {
   if (this.browser) {
     await this.browser.close();
