@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test --grep @excel",
-    "ctagtest": "npx cucumber-js --tags @eCom --exit",
-    "ctest": "npx cucumber-js --exit",
+    "ctagtest": "npx cucumber-js --tags @eCom",
+    "ctest": "npx cucumber-js",
     "teWebTest": "npx playwright test --grep @web",
     "smoke": "npx playwright test --grep @smoke",
     "regression": "npx playwright test --grep @regression"
