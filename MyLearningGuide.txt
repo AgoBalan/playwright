@@ -69,6 +69,13 @@ To run in jenkins ,ocalhost 7777 admin:admin
                 playwright-report/**
 
 
+----------------------------------------------------
+TO enable Cucumber 
+1.install cuucmber ad dowbload plguin(refre read me file)
+2.Create folder features under root folder -- cucumber mandatory one 
+3.Create feature file inside
+
+
 
 
 
