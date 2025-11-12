@@ -1,4 +1,5 @@
-import { expect } from '@playwright/test';
+//import { expect } from '@playwright/test';
+const assert = require('assert'); // nodj assert alternate to above expect
 
 class DashBoardPage{
     constructor(page){
@@ -9,7 +10,8 @@ class DashBoardPage{
     }
 
     async searchProductAndAddToCart(productName){
-        await expect(this.page).toHaveTitle("Let's Shop");
+       // await expect(this.page).toHaveTitle("Let's Shop");
+       assert.strictEqual(await this.page.title(),"Let's Shop");
         await this.products.first().waitFor();
         const count =  await this.productsText.count(); 
         for (let i = 0; i < count; ++i) {
@@ -33,7 +35,8 @@ class DashBoardPage{
         console.log("Product locator is ",product);
         await this.page.locator(product).first().waitFor();
         const bool = await this.page.locator(product).isVisible(); //locator provided by playwright
-        expect(bool).toBeTruthy();
+       // expect(bool).toBeTruthy();
+        assert.strictEqual(bool,true);
     }
 
 }

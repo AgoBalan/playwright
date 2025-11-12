@@ -21,7 +21,7 @@ const { chromium } = require('playwright');
     //************************************************************************************* */
     });
 
-    When('User add item {string} to the cart', {timeout: 6*1000},async function (string) {
+    When('User add item {string} to the cart', {timeout: 6*1000}, async function (string) {
     const dashBoardPage = this.pageObjectManager.getDashBoardPage();
     await dashBoardPage.searchProductAndAddToCart(string);
     await dashBoardPage.goToCartPage();
