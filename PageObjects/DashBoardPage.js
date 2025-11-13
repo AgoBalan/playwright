@@ -10,8 +10,6 @@ class DashBoardPage{
     }
 
     async searchProductAndAddToCart(productName){
-       // await expect(this.page).toHaveTitle("Let's Shop");
-       assert.strictEqual(await this.page.title(),"Let's Shop");
         await this.products.first().waitFor();
         const count =  await this.productsText.count(); 
         for (let i = 0; i < count; ++i) {
@@ -24,6 +22,17 @@ class DashBoardPage{
                 break;
             }
         }
+    }
+
+    async searchProductAndAddToCartOptimized(productName) {
+        assert.strictEqual(await this.page.title(), "Let's Shop");
+        await this.products.first().waitFor();
+        // Use Playwright's locator filter to find the product card directly
+        const productCard = this.products.filter({ has: this.productsText.filter({ hasText: productName }) });
+        // Wait for the product card to be visible
+        await productCard.first().waitFor();
+        // Click the 'Add To Cart' button inside the product card
+        await productCard.first().locator("button:has-text('Add To Cart')").click();
     }
     async goToCartPage(){
         await this.cart.click();
